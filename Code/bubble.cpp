@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-
 using namespace std;
+
 void bubbleSort(int* arr, int size) {
     cout << "Bubble sort in progress " << endl;
     for (int i = 0; i < size; i++) {
@@ -10,6 +10,19 @@ void bubbleSort(int* arr, int size) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr[j], arr[j + 1]);
             }
+        }
+    }
+}
+
+
+
+void insertionSort(int *arr, int size) {
+    cout << "Insertion sort in progress " << endl;
+    for (int i = 0; i < size; i++) {
+        int j = i;
+        while (j > 0 && (arr[j - 1] > arr[j])) {
+            swap(arr[j], arr[j - 1]);
+            j--;
         }
     }
 }
