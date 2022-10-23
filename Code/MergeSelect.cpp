@@ -8,44 +8,44 @@ void selectionSort(int a[], int n);
 
 vector<int> mergeFunction(vector<int> a);
 vector<int> mergeTogether(vector<int> a, vector<int> b);
-
-int main() {
-	clock_t start, end;
-	int ar1[5] = { 2, 8, 1, 6, 3 };
-	int ar2[5] = { 7, 6, 4,2 ,1 };
-	int ar3[5] = { 1, 2, 5,4 ,3 };
-	start = clock();
-	selectionSort(ar1, 5);
-	end = clock();
-	double elapsedClocks = (double)(end - start);
-	double elapsedSeconds = elapsedClocks / CLOCKS_PER_SEC;
-	cout << "\nTime Taken (Selection): " << elapsedSeconds << endl;
-
-	vector<int> items3 = { 4, 1, 5, 7, 2, 9,12, 3 , 6, 8 };
-	vector<int> items = { 10,9,8, 7, 5, 4, 2, 1 };
-	vector<int> items2 = { 1, 3, 4, 5, 10, 8, 7, 11, 22, 6 };
-
-	vector<int> arg2;
-
-	for (int i = 0; i < 30; i++) {
-		arg2.push_back(rand() % 30);
-	}
-
-
-	cout << endl;
-	start = clock();
-	arg2 = mergeFunction(arg2);
-	end = clock();
-	for (int i = 0; i < arg2.size(); i++) {
-		cout << arg2[i] << " ";
-	}
-	double elapsedClocks2 = (double)(end - start);
-	double elapsedSeconds2 = elapsedClocks2 / CLOCKS_PER_SEC;
-	cout << "\nTime Taken (Recursive): " << elapsedSeconds2 << endl;
-
-
-	return 0;
-}
+//
+//int main() {
+//	clock_t start, end;
+//	int ar1[5] = { 2, 8, 1, 6, 3 };
+//	int ar2[5] = { 7, 6, 4,2 ,1 };
+//	int ar3[5] = { 1, 2, 5,4 ,3 };
+//	start = clock();
+//	selectionSort(ar1, 5);
+//	end = clock();
+//	double elapsedClocks = (double)(end - start);
+//	double elapsedSeconds = elapsedClocks / CLOCKS_PER_SEC;
+//	cout << "\nTime Taken (Selection): " << elapsedSeconds << endl;
+//
+//	vector<int> items3 = { 4, 1, 5, 7, 2, 9,12, 3 , 6, 8 };
+//	vector<int> items = { 10,9,8, 7, 5, 4, 2, 1 };
+//	vector<int> items2 = { 1, 3, 4, 5, 10, 8, 7, 11, 22, 6 };
+//
+//	vector<int> arg2;
+//
+//	for (int i = 0; i < 30; i++) {
+//		arg2.push_back(rand() % 30);
+//	}
+//
+//
+//	cout << endl;
+//	start = clock();
+//	arg2 = mergeFunction(arg2);
+//	end = clock();
+//	for (int i = 0; i < arg2.size(); i++) {
+//		cout << arg2[i] << " ";
+//	}
+//	double elapsedClocks2 = (double)(end - start);
+//	double elapsedSeconds2 = elapsedClocks2 / CLOCKS_PER_SEC;
+//	cout << "\nTime Taken (Recursive): " << elapsedSeconds2 << endl;
+//
+//
+//	return 0;
+//}
 
 void selectionSort(int a[], int n)
 {

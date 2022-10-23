@@ -99,46 +99,46 @@ void quickSort(int unsorted[],int p, int r, int pivot_choice){
 			}
 }
 
-
-int main(){
-
-	srand(time(NULL)); 
-	int size = 1000'000'000; 
-	int* unsorted = new int[size]; 
-	int p =0; 
-	int r = size-1; 
-	int pivot_choice=0; 
-	clock_t start, end; 
-       	double elapsedClocks= 0.0;
-	double elapsedSeconds = 0.0;
-	
-	for(int i=0; i< size; i++){
-		unsorted[i] = rand() % 10000; 
-		
-	}
-/*	cout<<"1) Pivot = 1st element\n2) Pivot = Random Element\n3) Pivot = Median Value\n"; 
-		while(true){
-		cin>> pivot_choice; 
-		if(pivot_choice <1 || pivot_choice > 3)
-			continue;
-		else break;
-		}
-		*/
-	//	printArray(unsorted, size); 
-		cout<<"SIZE = "<<size <<endl;
-		for(int i =1; i<4;i++){ 
-		pivot_choice=i; 
-		start = clock(); 
-		quickSort(unsorted,p, r, pivot_choice); 
-		end = clock(); 
-		elapsedClocks= (double) (end -start);
-		elapsedSeconds= elapsedClocks / CLOCKS_PER_SEC;
-		if(pivot_choice==1) cout<<"Pivot = 1st element running time: ";
-		else if(pivot_choice==2)cout<<"Pivot = Random element, running time: "; 
-		else cout<<"Pivot = Median Value, running time: "; 
-		cout<<elapsedSeconds<<" seconds"<<endl;
-		}
-	//	printArray(unsorted, size); 
-
-
-}
+//
+//int main(){
+//
+//	srand(time(NULL));
+//	int size = 1000'000'000;
+//	int* unsorted = new int[size];
+//	int p =0;
+//	int r = size-1;
+//	int pivot_choice=0;
+//	clock_t start, end;
+//       	double elapsedClocks= 0.0;
+//	double elapsedSeconds = 0.0;
+//
+//	for(int i=0; i< size; i++){
+//		unsorted[i] = rand() % 10000;
+//
+//	}
+///*	cout<<"1) Pivot = 1st element\n2) Pivot = Random Element\n3) Pivot = Median Value\n";
+//		while(true){
+//		cin>> pivot_choice;
+//		if(pivot_choice <1 || pivot_choice > 3)
+//			continue;
+//		else break;
+//		}
+//		*/
+//	//	printArray(unsorted, size);
+//		cout<<"SIZE = "<<size <<endl;
+//		for(int i =1; i<4;i++){
+//		pivot_choice=i;
+//		start = clock();
+//		quickSort(unsorted,p, r, pivot_choice);
+//		end = clock();
+//		elapsedClocks= (double) (end -start);
+//		elapsedSeconds= elapsedClocks / CLOCKS_PER_SEC;
+//		if(pivot_choice==1) cout<<"Pivot = 1st element running time: ";
+//		else if(pivot_choice==2)cout<<"Pivot = Random element, running time: ";
+//		else cout<<"Pivot = Median Value, running time: ";
+//		cout<<elapsedSeconds<<" seconds"<<endl;
+//		}
+//	//	printArray(unsorted, size);
+//
+//
+//}

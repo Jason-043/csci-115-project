@@ -35,7 +35,7 @@ void countingSort(int original[]){
     for (int i = 0; i <= maxValue; ++i){
         cout << "Freq at "<< i <<": "<< freq[i] << endl;
     }
-    
+
     cout <<"-------"<<endl;
     */
     //cout << "Freq at "<< 6 <<": "<< freq[maxValue] << endl;
@@ -51,7 +51,7 @@ void countingSort(int original[]){
     */
     int output[originalSize];
 
-//Lines 9-11 of suedo code 
+//Lines 9-11 of suedo code
     for (int i = 0; i < originalSize; ++i){
         output[i] = 0;
     }
@@ -74,7 +74,7 @@ void countingSort(int original[]){
         output[summ[original[n]]-1] = original[n];
 
         summ[original[n]] -= 1;
-    } 
+    }
     /*
     for (int i = 0; i < originalSize; ++i){
         cout << "Output at "<< i <<": "<< output[i] << endl;
@@ -89,7 +89,7 @@ void countingSort(int original[]){
     for (int i = 0; i < originalSize; ++i){
         original[i] = output[i];
     }
-    
+
 }
 void countingSort2(int original[], int div){
     int maxValue = original[0];
@@ -116,7 +116,7 @@ void countingSort2(int original[], int div){
         output[freq[(original[n]/div)%10]-1] = original[n];
 
         freq[(original[n]/div)%10]--;
-    } 
+    }
     for (int i = 0; i < originalSize; ++i){
         original[i] = output[i];
     }
@@ -128,62 +128,62 @@ void radixsort(int original2[]){
             maxValue = original2[i];
         }
     }
-    
+
     for(int div=1; maxValue/div > 0; div *= 10){
         countingSort2(original2, div);
     }
 
 }
-    
-int main(){
-    
-    cout << "Size of Input array (Counting) : ";
-    cin >> originalSize;
-    int a1[originalSize];
-    cin.clear();
-    cin.ignore();
-    string input;
-    for(int i = 0; i < originalSize;++i ){
-        getline(cin, input);
-        a1[i] = stoi(input);
-    }
-    /*Sample Input
-    originalSize = 8;
-    int a2[8] = {2,5,3,0,2,3,0,3};
-    int a3[8] = {3,6,4,1,3,4,1,4};
-    */
-    cout << "--------"<<endl;
-    auto start = chrono::high_resolution_clock::now();
-    countingSort(a1);
-    auto end  = chrono::high_resolution_clock::now();
-    for (int i = 0; i < originalSize; ++i){
-        cout << "Output at "<< i <<": "<< a1[i] << endl;
-    }
-    auto elapsed = chrono::duration_cast<chrono::nanoseconds>(end - start);
-    cout << "Time: " << elapsed.count()/1000.0 << endl;
-    //Radix
-    cout << "--------"<<endl;
-    cout << "Size of Input array (Radix) : ";
-    cin >> originalSize;
-    int a4[originalSize];
-    cin.clear();
-    cin.ignore();
-    for(int i = 0; i < originalSize;++i ){
-        getline(cin, input);
-        a4[i] = stoi(input);
-    }
-    //originalSize = 8;
-    //int a4[8] = {326,453,608,835,751,435,704,690};
-    cout << "--------"<<endl;
-     start = chrono::high_resolution_clock::now();
-    radixsort(a4);
-     end  = chrono::high_resolution_clock::now();
-    for (int i = 0; i < originalSize; ++i){
-        cout << "Output at "<< i <<": "<< a4[i] << endl;
-    }
-     elapsed = chrono::duration_cast<chrono::nanoseconds>(end - start);
-    cout << "Time: " << elapsed.count()/1000.0 << endl;
 
-    
-    return 0;
-}
+//int main(){
+//
+//    cout << "Size of Input array (Counting) : ";
+//    cin >> originalSize;
+//    int a1[originalSize];
+//    cin.clear();
+//    cin.ignore();
+//    string input;
+//    for(int i = 0; i < originalSize;++i ){
+//        getline(cin, input);
+//        a1[i] = stoi(input);
+//    }
+//    /*Sample Input
+//    originalSize = 8;
+//    int a2[8] = {2,5,3,0,2,3,0,3};
+//    int a3[8] = {3,6,4,1,3,4,1,4};
+//    */
+//    cout << "--------"<<endl;
+//    auto start = chrono::high_resolution_clock::now();
+//    countingSort(a1);
+//    auto end  = chrono::high_resolution_clock::now();
+//    for (int i = 0; i < originalSize; ++i){
+//        cout << "Output at "<< i <<": "<< a1[i] << endl;
+//    }
+//    auto elapsed = chrono::duration_cast<chrono::nanoseconds>(end - start);
+//    cout << "Time: " << elapsed.count()/1000.0 << endl;
+//    //Radix
+//    cout << "--------"<<endl;
+//    cout << "Size of Input array (Radix) : ";
+//    cin >> originalSize;
+//    int a4[originalSize];
+//    cin.clear();
+//    cin.ignore();
+//    for(int i = 0; i < originalSize;++i ){
+//        getline(cin, input);
+//        a4[i] = stoi(input);
+//    }
+//    //originalSize = 8;
+//    //int a4[8] = {326,453,608,835,751,435,704,690};
+//    cout << "--------"<<endl;
+//     start = chrono::high_resolution_clock::now();
+//    radixsort(a4);
+//     end  = chrono::high_resolution_clock::now();
+//    for (int i = 0; i < originalSize; ++i){
+//        cout << "Output at "<< i <<": "<< a4[i] << endl;
+//    }
+//     elapsed = chrono::duration_cast<chrono::nanoseconds>(end - start);
+//    cout << "Time: " << elapsed.count()/1000.0 << endl;
+//
+//
+//    return 0;
+//}
