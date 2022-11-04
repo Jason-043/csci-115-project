@@ -20,6 +20,7 @@ class Heap {
 		void max_heapify(int i); //Maintains the max heap property
 		int extract_maximum(); //Return the maximum element in heap and swap last element with first element
 		void ascendingHeapSort(); //Prints the array in ascending order
+        void ascendingHeapSort1();
 		void buildMaxHeap(); //Heapifies entire list
 		void printMax(); 
 
@@ -139,7 +140,6 @@ void Heap::ascendingHeapSort() {
 	this->n = vec_size; 
 	this->buildMinHeap(); 
 }
-
 void Heap::descendingHeapSort(){
 	vector<int> le_sorted;
 	int vec_size = this->n; // Size of the vector
@@ -214,55 +214,5 @@ void Heap:: modifyValMin(int i, int val){
                 this->buildMinHeap();
 
         }
-
 }
-
-class priority_q{
-	public:
-	int p_size=0 ;
-	vector<int> vecchio;
-	Heap* p_heap;
-	priority_q(vector<int> input_vec);
-	void insert(int new_val);
-	int extract_max(); 
-	void print_maxq(); 
-	void print_q(); 
-	void increase_key(int index, int val);
-};
-
-priority_q::priority_q(vector<int> input_vec){
-	int input_size=input_vec.size(); 
-
-	for(int i =0; i<input_size;i++){	
-		vecchio.push_back(input_vec.at(i)); 
-	}
-	this->p_heap = new Heap(input_vec,0);
-	this->p_size = input_size; 
-
-//	this->p_heap->printArray();
-}	
-void priority_q::print_q(){
-	cout<<"PRIORITY QUEUE ";
-	this->p_heap->printArray(); 
-
-}
-
-void priority_q::print_maxq(){
-	this->p_heap->printMax();
-
-}
-void priority_q::insert(int new_val){
-	this->p_heap->insert_value_maxHeap(new_val);
-}
-
-int priority_q::extract_max(){
-	this->p_size--;
-	return p_heap->extract_maximum();
-
-}
-
-void::priority_q::increase_key(int ind, int val){
-	p_heap->modifyValMax(ind, val); 
-}
-
 #endif
