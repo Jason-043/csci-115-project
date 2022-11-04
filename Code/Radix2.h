@@ -1,3 +1,5 @@
+#ifndef CSCI_115_PROJECT_RADIX2_H
+#define CSCI_115_PROJECT_RADIX2_H
 #include <iostream>
 #include <chrono>
 using namespace std;
@@ -121,7 +123,7 @@ void countingSort2(int original[], int div){
         original[i] = output[i];
     }
 }
-void radixsort(int original2[]){
+void radixsort(int *original2){
     int maxValue = original2[0];
     for(int i= 0; i < originalSize; ++i ){
         if (original2[i] > maxValue){
@@ -187,3 +189,4 @@ void radixsort(int original2[]){
 //
 //    return 0;
 //}
+#endif //CSCI_115_PROJECT_RADIX2_H

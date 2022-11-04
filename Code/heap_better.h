@@ -1,7 +1,10 @@
+#ifndef HEAPBETTER
+#define HEAPBETTER
+
 #include <iostream>
 #include <vector>
 #include <cmath>
-//#include "heap_sort.h"
+
 using namespace std;
 class Heap {
 	public:
@@ -261,3 +264,5 @@ int priority_q::extract_max(){
 void::priority_q::increase_key(int ind, int val){
 	p_heap->modifyValMax(ind, val); 
 }
+
+#endif

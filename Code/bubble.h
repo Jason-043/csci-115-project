@@ -1,6 +1,6 @@
+#ifndef CSCI_115_PROJECT_BUBBLE_H
+#define CSCI_115_PROJECT_BUBBLE_H
 #include <iostream>
-#include <vector>
-#include <cmath>
 using namespace std;
 
 void bubbleSort(int* arr, int size) {
@@ -26,3 +26,6 @@ void insertionSort(int *arr, int size) {
         }
     }
 }
+
+
+#endif //CSCI_115_PROJECT_BUBBLE_H

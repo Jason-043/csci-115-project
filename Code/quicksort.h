@@ -1,3 +1,6 @@
+#ifdef QUICKSORT
+#define QUICKSORT
+
 #include <iostream>
 #include <array>
 #include <time.h>
@@ -142,3 +145,5 @@ void quickSort(int unsorted[],int p, int r, int pivot_choice){
 //
 //
 //}
+
+#endif
