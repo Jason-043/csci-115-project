@@ -5,10 +5,9 @@
 #include "bubble.h"
 #include "quickSorts.h"
 #include "Radix2.h"
-
-
 using namespace std;
-void print(int *arr, int size){
+
+void print(int arr[], int size){
     for(int i = 0; i < size; i++){
         cout << arr[i] <<" ";
     }
