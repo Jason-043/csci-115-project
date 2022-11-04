@@ -5,10 +5,9 @@
 #include "bubble.h"
 #include "quicksort.h"
 #include "Radix2.h"
-
-
 using namespace std;
-void print(int *arr, int size){
+
+void print(int arr[], int size){
     for(int i = 0; i < size; i++){
         cout << arr[i] <<" ";
     }
@@ -29,13 +28,11 @@ int main(){
 //    bubbleSort(arr, arrSize);
 //    MergeSort(arr, 0, arrSize-1);
 //    selectionSort(arr, arrSize);
+    //cout << "vecotr heap test" << endl;
+   //Heap * heapTest = new Heap(vecchio);
+   // heapTest->printArray();
+   // heapTest->ascendingHeapSort();
+    radixsort(arr);
     print(arr, arrSize);
-
-    cout << "vecotr heap test" << endl;
-    Heap * heapTest = new Heap(vecchio);
-    heapTest->printArray();
-    heapTest->ascendingHeapSort();
-//    radixsort(arr);
-
     return 0;
 }
