@@ -1,0 +1,12 @@
+# ninja log v5
+673	735	1667604907661163605	csci_115_project	e42ff7be5fa3d0f8
+2	673	1667604907596037341	CMakeFiles/csci_115_project.dir/Code/main.cpp.o	c14d9508d687d63b
+2	713	1667600382909037803	CMakeFiles/csci_115_project.dir/Code/bubble.cpp.o	fabe0284018b6142
+3	2481	1667601181194804919	CMakeFiles/csci_115_project.dir/Code/MergeSelect.cpp.o	9fc7904e4a8615d6
+0	825	1666486670282589441	CMakeFiles/csci_115_project.dir/Code/heap_better.cpp.o	b9ded415904498a1
+3	742	1666486883735972164	CMakeFiles/csci_115_project.dir/Code/Radix.cpp.o	3b6dac22ff6f90c
+3	749	1666486883743576301	CMakeFiles/csci_115_project.dir/Code/quicksort.cpp.o	3e872ff3142bc0e
+0	131	1667605290415781610	build.ninja	bf147fcd8a96b23a
+0	115	1667605290415781610	build.ninja	bf147fcd8a96b23a
+1	1119	1667605291541967432	CMakeFiles/csci_115_project.dir/Code/main.cpp.o	c14d9508d687d63b
+1119	1220	1667605291648561594	csci_115_project	e42ff7be5fa3d0f8
