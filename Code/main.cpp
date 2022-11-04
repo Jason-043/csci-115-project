@@ -3,7 +3,7 @@
 #include "MergeSelect.h"
 #include "heap_better.h"
 #include "bubble.h"
-#include "quicksort.h"
+#include "quickSorts.h"
 #include "Radix2.h"
 
 
@@ -31,6 +31,8 @@ int main(){
 //    MergeSort(arr, 0, arrSize-1);
 //    selectionSort(arr, arrSize);
 //    radixsort(arr, arrSize);
+//    insertionSort(arr, arrSize);
+    quickSort(arr, 0, arrSize-1, 0);
     print(arr, arrSize);
 
 //    cout << "vector heap test" << endl;

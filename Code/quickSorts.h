@@ -1,22 +1,21 @@
-#ifdef QUICKSORT
-#define QUICKSORT
-
+#ifndef CSCI_115_PROJECT_QUICKSORTS_H
+#define CSCI_115_PROJECT_QUICKSORTS_H
 #include <iostream>
 #include <array>
 #include <time.h>
-using namespace std; 
+using namespace std;
 
 void printArray(int arr[], int size){
 	for(int i=0; i<size;i++){
-		cout<< arr[i]<<endl; 
+		cout<< arr[i]<<endl;
 	}
 }
 int partition( int unsorted[], int p , int r){
-	
-		int i = p; 
+
+		int i = p;
 		int j =r;
 	// PIVOT CHOICE NUMBER 1--------------------------------------------------------------------------------------------------
-	
+
 		int pivot = unsorted[p];
 		while(i < j){
 			while(unsorted[j] > pivot){
@@ -30,75 +29,72 @@ int partition( int unsorted[], int p , int r){
                 		unsorted[i]= unsorted[j];
                 		unsorted[j] = temp;
        		 		}
-				
+
 			}
 				int temp2= unsorted[p];
 				unsorted[p]=unsorted[j];
-				unsorted[j]= temp2; 
+				unsorted[j]= temp2;
         			return j;
 }
 	// PIVOT CHOICE 2 ----------------------------------------------------------------------------------
 int partition_random( int unsorted[], int p, int r){
-		
+
 	        int random = p+rand() % (r-p); //random index off the array
 	//	cout<<"random #: "<< random;
 
 		int temp = unsorted[random];//swap random element with PIVOT element in orig. partition function
 		unsorted[random] = unsorted[p];
-		unsorted[p] = temp; 
-	
-		return partition(unsorted,p, r); 	
+		unsorted[p] = temp;
+
+		return partition(unsorted,p, r);
 							}
 
 	// PIVOT CHOICE 3 ----------------------------------------------------------------------------------
 int partition_median( int unsorted[], int p, int r){
-	int middle =0; 
+	int middle =0;
 	int first = unsorted[p];
-	int pivot =0; 	
-	int pivot_index=0; 
+	int pivot =0;
+	int pivot_index=0;
 	/*	if((r+1) % 2 ==0){		//if array size is even two middle elemtents, else 1 middle element
 	middle = (unsorted[r/2] + unsorted[(r+1)/2])  / 2  ;      // add two middle numbers
 		}
 	else//odd */
-		middle = unsorted[(p+r)/2]; 
-	
-	int last = unsorted[r]; 
- 	
+		middle = unsorted[(p+r)/2];
+
+	int last = unsorted[r];
+
 //	cout<<"1st,middle, last: "<< first<<", "<<middle<<", "<<last<<endl;
 	if(first < middle && first > last || first > middle && first < last) pivot = first;
 	else if(last > middle && last < first || last <middle && last >first) pivot = last;
-	else pivot = middle; 
+	else pivot = middle;
 
 //	cout<<"pivot "<<pivot <<endl;
-	
+
 		if(pivot==first)pivot_index = p;
 		else if(pivot==middle) pivot_index = ((p+r)/2);
-		else pivot_index = r; 	
+		else pivot_index = r;
 
 
 		int temp = unsorted[pivot_index];//swap random element with PIVOT element in orig. partition function
 		unsorted[pivot_index] = unsorted[p];
-		unsorted[p] = temp; 
-	return	partition( unsorted, p, r) ; 	
+		unsorted[p] = temp;
+	return	partition( unsorted, p, r) ;
 
 }
-void quickSort(int unsorted[],int p, int r, int pivot_choice){ 
-
-
+void quickSort(int unsorted[],int p, int r, int pivot_choice){
 	if(p < r){
 		int q = 0;
 
 		if(pivot_choice ==1)
-		q = partition(unsorted,p, r); 
+		q = partition(unsorted,p, r);
 		else if(pivot_choice==2)
-		q = partition_random(unsorted,p, r); 
+		q = partition_random(unsorted,p, r);
 		else {
-		q= partition_median(unsorted, p, r); 	
-	
+		q= partition_median(unsorted, p, r);
 		}
-	//	cout<<"p: "<<p<<", q: "<<q<<", q+1: "<<q+1<<", r: "<<r<<endl; 
-		quickSort(unsorted, p, q-1, pivot_choice); 
-		quickSort(unsorted, q+1, r, pivot_choice); 
+	//	cout<<"p: "<<p<<", q: "<<q<<", q+1: "<<q+1<<", r: "<<r<<endl;
+		quickSort(unsorted, p, q-1, pivot_choice);
+		quickSort(unsorted, q+1, r, pivot_choice);
 			}
 }
 
@@ -146,4 +142,4 @@ void quickSort(int unsorted[],int p, int r, int pivot_choice){
 //
 //}
 
-#endif
+#endif //CSCI_115_PROJECT_QUICKSORTS_H
