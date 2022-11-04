@@ -68,7 +68,8 @@ void countingSort2(int original[], int div){
         original[i] = output[i];
     }
 }
-void radixsort(int original2[]){
+void radixsort(int *original2 , int size){
+    originalSize = size;
     int maxValue = original2[0];
     for(int i= 0; i < originalSize; ++i ){
         if (original2[i] > maxValue){
