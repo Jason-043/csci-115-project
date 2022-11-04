@@ -28,10 +28,10 @@ int main(){
 //    bubbleSort(arr, arrSize);
 //    MergeSort(arr, 0, arrSize-1);
 //    selectionSort(arr, arrSize);
-    //cout << "vecotr heap test" << endl;
-   //Heap * heapTest = new Heap(vecchio);
-   // heapTest->printArray();
-   // heapTest->ascendingHeapSort();
+//cout << "vecotr heap test" << endl;
+//Heap * heapTest = new Heap(vecchio);
+// heapTest->printArray();
+// heapTest->ascendingHeapSort();
     radixsort(arr);
     print(arr, arrSize);
     return 0;
