@@ -25,12 +25,17 @@ int main(){
         vecchio[i] = rand() % range;
         arr[i] = rand() % range;
     }
+    // build a half sorted array
+
+    // build a sorted array
+
    //  0 1 2 ..9
     print(arr, arrSize);
 //    bubbleSort(arr, arrSize); // working
 //    MergeSort(arr, 0, arrSize-1); // working
 //    selectionSort(arr, arrSize); // working
 //    radixsort(arr, arrSize); // working
+//    countingSort(arr, arrSize); // working
 //    insertionSort(arr, arrSize); // working
 //    quickSort(arr, 0, arrSize-1, 0); // working
     print(arr, arrSize);
