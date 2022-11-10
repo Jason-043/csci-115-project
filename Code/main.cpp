@@ -26,9 +26,20 @@ int main(){
         arr[i] = rand() % range;
     }
     // build a half sorted array
-
+    for(int i = 0; i < arrSize; i++){
+        vecchio[i] = rand() % range;
+        arr[i] = rand() % range;
+    }
     // build a sorted array
-
+    for(int i = 0; i < arrSize; i++){
+        vecchio[i] = i;
+        arr[i] = i;
+    }
+    // Reverse Sorted
+    for(int i = arrSize-1; i>=0 ; i--){
+        vecchio[i] = i;
+        arr[i] = i;
+    }
    //  0 1 2 ..9
     print(arr, arrSize);
 //    bubbleSort(arr, arrSize); // working
