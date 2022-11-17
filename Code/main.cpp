@@ -20,6 +20,7 @@ int main(){
     clock_t start;
     clock_t end;
     const int arrSize = 500000;
+    cout << "cjhange";
 //
 //    vector <int> vecchioRand(arrSize);
 //    vector <int> vecchioHalf(arrSize);
