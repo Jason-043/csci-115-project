@@ -3,9 +3,9 @@
 #include "heap_better.h"
 #include "bubble.h"
 #include "quickSorts.h"
+#include "arr_func.h"
 #include "Radix2.h"
 #include <ctime>
-
 
 using namespace std;
 void print(int *arr, int size){
@@ -19,61 +19,53 @@ int main(){
 
     clock_t start;
     clock_t end;
-    const int arrSize = 500000;
-    cout << "cjhange";
-//
-//    vector <int> vecchioRand(arrSize);
-//    vector <int> vecchioHalf(arrSize);
-//    vector <int> vecchioSort(arrSize);
-//    vector <int> vecchioRev(arrSize);
+    int thousand = 1000;
+    int tent = 10000;
+    int forty = 40000;
+    int seven = 75000;
+    int hund = 100000;
+    int twoHundo = 200000;
+    int mil = 1000000;
 
-    int randArr[arrSize];
-    int halfArr[arrSize];
-    int sortedArr[arrSize];
-    int revArr[arrSize];
-    int range = 100; // range of possible numbers in the array
-//    for(int i = 0; i < arrSize; i++){
-//        vecchioRand[i] = rand() % range;
-//        randArr[i] = rand() % range;
-//    }
-////     build a half sorted array
-//    for(int i = 0; i < arrSize; i++){
-//        vecchioHalf[i] = rand() % range;
-//        halfArr[i] = rand() % range;
-//    }
-//    // build a sorted array
-//    for(int i = 0; i < arrSize; i++){
-//        vecchioSort[i] = i;
-//        sortedArr[i] = i;
-//    }
-//    // Reverse Sorted
-//    for(int i = arrSize-1; i>=0 ; i--){
-//        vecchioRev[i] = i;
-//        revArr[i] = i;
-//    }
-   //  0 1 2 ..9
+    const int arrSize = forty;
+    cout << "testing with size " << arrSize << endl;
+//    for( int r = 0; r < 5; r ++){
+    for(int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
+        int* arr = array_choice(k, arrSize); // make array of choice k
+        vector <int> vecchio;
+        for(int i = 0; i < arrSize; i++){ // fill in vecchio with arr
+            vecchio.push_back(arr[i]);
+        }
+        for (int i = 0; i < 3; i++) {// three times (three trials)
+            start = clock();
+            // sort
+//            merge_sort(arr, 0, arrSize - 1); // working
+//            bubbleSort(arr, arrSize); // working
+//            selectionSort(arr, arrSize);
+            insertionSort(arr, arrSize); // working
+//            radixsort(arr, arrSize); // working
+//            countingSort(arr, arrSize); // working
+//            quickSort(arr, 0, arrSize-1, 0); // working
+//            Heap * heapTest = new Heap(vecchio, 1); //flag 1 indicates ascending order
+//            heapTest->ascendingHeapSort();
+//      heapsort broken with random array
+//      heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
+            end = clock();
+            double timeElapsed = (double) (end - start);
+            double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
+            cout << "time for trial " << i+1 << ": " << elapsedSeconds << endl;
+        }
+    }
 
-    start = clock();
-    // sort goes here
-//    bubbleSort(randArr, arrSize); // working
-    MergeSort(randArr, 0, arrSize-1); // working
-
-    end = clock();
-    double timeElapsed = (double)(end-start);
-    double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
-    cout << "time: " << elapsedSeconds << endl;
 
 //    print(arr, arrSize);
+//    selectionSort(randArr, arrSize);
+//    merge_sort(randArr, 0, arrSize-1); // working
 //    MergeSort(arr, 0, arrSize-1); // working
-//    selectionSort(arr, arrSize); // working
 //    radixsort(arr, arrSize); // working
-//    countingSort(arr, arrSize); // working
-//    insertionSort(arr, arrSize); // working
-//    quickSort(arr, 0, arrSize-1, 0); // working
 //    print(arr, arrSize);
 
 //    cout << "vector heap test" << endl; // working
-//    Heap * heapTest = new Heap(vecchio, 1); //flag 1 indicates ascending order
 //    heapTest->printArray();
 //    heapTest->ascendingHeapSort();
 //
