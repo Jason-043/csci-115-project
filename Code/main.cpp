@@ -29,7 +29,7 @@ int main(){
     char tab = 9;
 
     int arrSize = forty;
-    for( int r = 0; r < 6; r ++) { // r decides size: 0->1,000 | 1->10,000 | 2->40,000 | 3->75,000 | 4->100,000 | 5->200,000
+    for( int r = 0; r < 6; r++) { // r decides size: 0->1,000 | 1->10,000 | 2->40,000 | 3->75,000 | 4->100,000 | 5->200,000
         if(r == 0) arrSize = 1000;
         else if(r == 1) arrSize = 10000;
         else if(r == 2) arrSize = 40000;
@@ -38,7 +38,7 @@ int main(){
         else arrSize = 200000;
         cout << "TESTING WITH SIZE: " << arrSize << endl;
         for (int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
-            int *arr = array_choice(k, arrSize); // make array of choice k
+            int* arr = array_choice(k, arrSize); // make array of choice k
             vector<int> vecchio;
             for (int i = 0; i < arrSize; i++) { // fill in vecchio with arr
                 vecchio.push_back(arr[i]);
