@@ -9,23 +9,23 @@ void print_arr(int* arr,int size){
 }	
 
 int* array_choice(int choice, int size){
-
+    char tab = 9;
 	int * arr_choice= new int[size]; // MAKE ARRAY 
 
 	if(choice==0){
-		cout<<"0 SORTED ARAY\n"; 
+		cout<< tab <<"SORTED ARAY\n";
 		for(int i=0; i< size; i++){
 		arr_choice[i]= i; // SORTED 
 		}
 	}
 	else if(choice ==1){
-		cout<<"1 RANDOM ARAY\n"; 
+		cout << tab <<"RANDOM ARAY\n";
 		for(int i=0; i< size; i++){
 			arr_choice[i]= rand() %100; // RANDOM ARRAY
 		}
 	}	
 	else if(choice==2){
-		cout<<"2 PARTIALLY SORTED ARAY\n"; 
+		cout << tab<<"PARTIALLY SORTED ARAY\n";
 		for(int i=0; i< size; i++){
 			if(i < (size/2))
 			arr_choice[i]= i;
@@ -35,7 +35,7 @@ int* array_choice(int choice, int size){
 	}
 	else{
 		int j =0; 
-		cout<<"REVERSE ARRAY\n";
+		cout << tab <<"REVERSE ARRAY\n";
 		for(int i= size-1; i>=0; i--){
 			arr_choice[j]= i;
 				j++;
