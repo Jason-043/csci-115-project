@@ -3,6 +3,7 @@
 #include "heap_better.h"
 #include "bubble.h"
 #include "quickSorts.h"
+#include "arr_func.h"
 #include "Radix2.h"
 #include <ctime>
 
@@ -19,44 +20,52 @@ int main(){
 
     clock_t start;
     clock_t end;
-    const int arrSize = 500000;
-    cout << "cjhange";
-//
-//    vector <int> vecchioRand(arrSize);
-//    vector <int> vecchioHalf(arrSize);
-//    vector <int> vecchioSort(arrSize);
-//    vector <int> vecchioRev(arrSize);
+    int thousand = 1000;
+    int tent = 10000;
+    int forty = 40000;
+    int seven = 75000;
+    int hund = 100000;
+    int twoHundo = 200000;
+    int mil = 1000000;
+    const int arrSize = twoHundo;
 
-    int randArr[arrSize];
-    int halfArr[arrSize];
-    int sortedArr[arrSize];
-    int revArr[arrSize];
+    vector <int> vecchioRand(arrSize);
+    vector <int> vecchioHalf(arrSize);
+    vector <int> vecchioSort(arrSize);
+    vector <int> vecchioRev(arrSize);
+
+    int* randArr = new int[arrSize];
+    int* halfArr = new int[arrSize];
+    int* sortedArr = new int [arrSize];
+    int* revArr = new int [arrSize];
     int range = 100; // range of possible numbers in the array
-//    for(int i = 0; i < arrSize; i++){
-//        vecchioRand[i] = rand() % range;
-//        randArr[i] = rand() % range;
-//    }
-////     build a half sorted array
+    for(int i = 0; i < arrSize; i++){
+        vecchioRand[i] = rand() % range;
+        randArr[i] = rand() % range;
+    }
+//     build a half sorted array
 //    for(int i = 0; i < arrSize; i++){
 //        vecchioHalf[i] = rand() % range;
 //        halfArr[i] = rand() % range;
 //    }
-//    // build a sorted array
+//     build a sorted array
 //    for(int i = 0; i < arrSize; i++){
 //        vecchioSort[i] = i;
 //        sortedArr[i] = i;
 //    }
-//    // Reverse Sorted
-//    for(int i = arrSize-1; i>=0 ; i--){
-//        vecchioRev[i] = i;
-//        revArr[i] = i;
+    // Reverse Sorted
+//    int j = 0;
+//    for(int i = arrSize-1; i>=0; i--){
+//        vecchioRev[j] = i;
+//        revArr[j++] = i;
 //    }
    //  0 1 2 ..9
 
     start = clock();
-    // sort goes here
-//    bubbleSort(randArr, arrSize); // working
-    MergeSort(randArr, 0, arrSize-1); // working
+//     sort goes here
+    bubbleSort(halfArr, arrSize); // working
+//    selectionSort(randArr, arrSize);
+//    merge_sort(randArr, 0, arrSize-1); // working
 
     end = clock();
     double timeElapsed = (double)(end-start);
