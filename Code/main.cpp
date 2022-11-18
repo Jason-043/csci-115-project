@@ -27,10 +27,10 @@ int main(){
     int twoHundo = 200000;
     int mil = 1000000;
 
-    const int arrSize = tent;
+    const int arrSize = forty;
+    cout << "testing with size " << arrSize << endl;
 
     for(int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
-        cout << "testing with size " << arrSize << endl;
         int* arr = array_choice(k, arrSize); // make array of choice k
         vector <int> vecchio;
         for(int i = 0; i < arrSize; i++){ // fill in vecchio with arr
@@ -40,15 +40,20 @@ int main(){
             start = clock();
             // sort
 //            merge_sort(arr, 0, arrSize - 1); // working
-            bubbleSort(arr, arrSize); // working
-
-            selectionSort(arr, arrSize);
-
+//            bubbleSort(arr, arrSize); // working
+//            selectionSort(arr, arrSize);
+            insertionSort(arr, arrSize); // working
+//            radixsort(arr, arrSize); // working
+//            countingSort(arr, arrSize); // working
 //            quickSort(arr, 0, arrSize-1, 0); // working
+//            Heap * heapTest = new Heap(vecchio, 1); //flag 1 indicates ascending order
+//            heapTest->ascendingHeapSort();
+//      heapsort broken with random array
+//      heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
             end = clock();
             double timeElapsed = (double) (end - start);
             double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
-            cout << "time for trial " << i << ": " << elapsedSeconds << endl;
+            cout << "time for trial " << i+1 << ": " << elapsedSeconds << endl;
         }
     }
 
@@ -57,14 +62,10 @@ int main(){
 //    selectionSort(randArr, arrSize);
 //    merge_sort(randArr, 0, arrSize-1); // working
 //    MergeSort(arr, 0, arrSize-1); // working
-//    selectionSort(arr, arrSize); // working
 //    radixsort(arr, arrSize); // working
-//    countingSort(arr, arrSize); // working
-//    insertionSort(arr, arrSize); // working
 //    print(arr, arrSize);
 
 //    cout << "vector heap test" << endl; // working
-//    Heap * heapTest = new Heap(vecchio, 1); //flag 1 indicates ascending order
 //    heapTest->printArray();
 //    heapTest->ascendingHeapSort();
 //
