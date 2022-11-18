@@ -29,7 +29,7 @@ int main(){
 
     const int arrSize = forty;
     cout << "testing with size " << arrSize << endl;
-
+//    for( int r = 0; r < 5; r ++){
     for(int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
         int* arr = array_choice(k, arrSize); // make array of choice k
         vector <int> vecchio;
