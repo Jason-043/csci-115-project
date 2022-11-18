@@ -8,7 +8,6 @@
 using namespace std;
 
 void selectionSort(int* arr, int size) {
-    cout << "Selection sort in progress " << endl;
     for (int i = 0; i < size-1; i++) {
         int min = i;
         for (int j = i + 1; j < size; j++) {

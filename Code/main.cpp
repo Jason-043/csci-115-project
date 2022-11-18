@@ -7,7 +7,6 @@
 #include "Radix2.h"
 #include <ctime>
 
-
 using namespace std;
 void print(int *arr, int size){
     for(int i = 0; i < size; i++){
@@ -27,58 +26,41 @@ int main(){
     int hund = 100000;
     int twoHundo = 200000;
     int mil = 1000000;
-    const int arrSize = twoHundo;
 
-    vector <int> vecchioRand(arrSize);
-    vector <int> vecchioHalf(arrSize);
-    vector <int> vecchioSort(arrSize);
-    vector <int> vecchioRev(arrSize);
+    const int arrSize = tent;
 
-    int* randArr = new int[arrSize];
-    int* halfArr = new int[arrSize];
-    int* sortedArr = new int [arrSize];
-    int* revArr = new int [arrSize];
-    int range = 100; // range of possible numbers in the array
-    for(int i = 0; i < arrSize; i++){
-        vecchioRand[i] = rand() % range;
-        randArr[i] = rand() % range;
+    for(int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
+        cout << "testing with size " << arrSize << endl;
+        int* arr = array_choice(k, arrSize); // make array of choice k
+        vector <int> vecchio;
+        for(int i = 0; i < arrSize; i++){ // fill in vecchio with arr
+            vecchio.push_back(arr[i]);
+        }
+        for (int i = 0; i < 3; i++) {// three times (three trials)
+            start = clock();
+            // sort
+//            merge_sort(arr, 0, arrSize - 1); // working
+            bubbleSort(arr, arrSize); // working
+
+            selectionSort(arr, arrSize);
+
+//            quickSort(arr, 0, arrSize-1, 0); // working
+            end = clock();
+            double timeElapsed = (double) (end - start);
+            double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
+            cout << "time for trial " << i << ": " << elapsedSeconds << endl;
+        }
     }
-//     build a half sorted array
-//    for(int i = 0; i < arrSize; i++){
-//        vecchioHalf[i] = rand() % range;
-//        halfArr[i] = rand() % range;
-//    }
-//     build a sorted array
-//    for(int i = 0; i < arrSize; i++){
-//        vecchioSort[i] = i;
-//        sortedArr[i] = i;
-//    }
-    // Reverse Sorted
-//    int j = 0;
-//    for(int i = arrSize-1; i>=0; i--){
-//        vecchioRev[j] = i;
-//        revArr[j++] = i;
-//    }
-   //  0 1 2 ..9
 
-    start = clock();
-//     sort goes here
-    bubbleSort(halfArr, arrSize); // working
-//    selectionSort(randArr, arrSize);
-//    merge_sort(randArr, 0, arrSize-1); // working
-
-    end = clock();
-    double timeElapsed = (double)(end-start);
-    double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
-    cout << "time: " << elapsedSeconds << endl;
 
 //    print(arr, arrSize);
+//    selectionSort(randArr, arrSize);
+//    merge_sort(randArr, 0, arrSize-1); // working
 //    MergeSort(arr, 0, arrSize-1); // working
 //    selectionSort(arr, arrSize); // working
 //    radixsort(arr, arrSize); // working
 //    countingSort(arr, arrSize); // working
 //    insertionSort(arr, arrSize); // working
-//    quickSort(arr, 0, arrSize-1, 0); // working
 //    print(arr, arrSize);
 
 //    cout << "vector heap test" << endl; // working

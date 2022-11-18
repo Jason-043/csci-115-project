@@ -11,7 +11,7 @@ void print_arr(int* arr,int size){
 int* array_choice(int choice, int size){
 
 	int * arr_choice= new int[size]; // MAKE ARRAY 
-	
+
 	if(choice==0){
 		cout<<"0 SORTED ARAY\n"; 
 		for(int i=0; i< size; i++){
@@ -30,7 +30,7 @@ int* array_choice(int choice, int size){
 			if(i < (size/2))
 			arr_choice[i]= i;
 			else
-			arr_choice[i]= rand()% 100; 
+			arr_choice[i]= rand()% 100;
 		}
 	}
 	else{
@@ -59,5 +59,27 @@ for(int i=0; i<4;i++){
 }
 
 */
-}
+//}
 
+//    int range = 100; // range of possible numbers in the array
+//    for(int i = 0; i < arrSize; i++){
+//        vecchioRand[i] = rand() % range;
+//        randArr[i] = rand() % range;
+//    }
+//     build a half sorted array
+//    for(int i = 0; i < arrSize; i++){
+//        vecchioHalf[i] = rand() % range;
+//        halfArr[i] = rand() % range;
+//    }
+//     build a sorted array
+//    for(int i = 0; i < arrSize; i++){
+//        vecchioSort[i] = i;
+//        sortedArr[i] = i;
+//    }
+// Reverse Sorted
+//    int j = 0;
+//    for(int i = arrSize-1; i>=0; i--){
+//        vecchioRev[j] = i;
+//        revArr[j++] = i;
+//    }
+//  0 1 2 ..9
