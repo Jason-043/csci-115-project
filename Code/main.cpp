@@ -14,7 +14,7 @@ void print(int *arr, int size){
     }
     cout << endl;
 }
-
+//cout yo
 int main(){
 
     clock_t start;
