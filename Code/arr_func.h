@@ -8,38 +8,24 @@ void print_arr(int* arr,int size){
 	}	
 }	
 
-int* array_choice(int choice, int size, int i){
+int* array_choice(int choice, int size){
 
 	int * arr_choice= new int[size]; // MAKE ARRAY 
-	if (i==0){
-		if(choice==0){
-		cout<<"0 SORTED ARAY\n"; 
-	}
-	else if(choice ==1){
-		cout<<"1 RANDOM ARAY\n"; 
-	}	
-	else if(choice==2){
-		cout<<"2 PARTIALLY SORTED ARAY\n"; 
-	}
-	else{
-		cout<<"REVERSE ARRAY\n";
-	}
-
-	}
+	
 	if(choice==0){
-		//cout<<"0 SORTED ARAY\n"; 
+	//	cout<<"0 SORTED ARAY\n"; 
 		for(int i=0; i< size; i++){
 		arr_choice[i]= i; // SORTED 
 		}
 	}
 	else if(choice ==1){
-		//cout<<"1 RANDOM ARAY\n"; 
+	//	cout<<"1 RANDOM ARAY\n"; 
 		for(int i=0; i< size; i++){
 			arr_choice[i]= rand() %100; // RANDOM ARRAY
 		}
 	}	
 	else if(choice==2){
-		//cout<<"2 PARTIALLY SORTED ARAY\n"; 
+	//	cout<<"2 PARTIALLY SORTED ARAY\n"; 
 		for(int i=0; i< size; i++){
 			if(i < (size/2))
 			arr_choice[i]= i;
