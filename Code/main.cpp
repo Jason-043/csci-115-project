@@ -45,7 +45,7 @@ int main(){
 //            heapsort broken with random array
 //           heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
             clock_t start = clock();
-            insertionSort(array_choice(k, arrSize), arrSize); // working
+            insertionSort(array_choice(k, arrSize, i), arrSize); // working
             clock_t end = clock();
             double timeElapsed = (double) (end - start);
             double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
