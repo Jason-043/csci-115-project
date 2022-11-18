@@ -14,7 +14,7 @@ void print(int *arr, int size){
     }
     cout << endl;
 }
-
+//cout yo
 int main(){
     int thousand = 1000;
     int tent = 10000;
@@ -45,7 +45,7 @@ int main(){
 //            heapsort broken with random array
 //           heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
             clock_t start = clock();
-            insertionSort(array_choice(k, arrSize), arrSize); // working
+            insertionSort(array_choice(k, arrSize, i), arrSize); // working
             clock_t end = clock();
             double timeElapsed = (double) (end - start);
             double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
@@ -66,6 +66,6 @@ int main(){
 //    heapTest->ascendingHeapSort();
 //
 
-
+// testing testing 123
     return 0;
 }
