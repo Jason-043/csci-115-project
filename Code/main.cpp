@@ -16,9 +16,6 @@ void print(int *arr, int size){
 }
 
 int main(){
-
-    clock_t start;
-    clock_t end;
     int thousand = 1000;
     int tent = 10000;
     int forty = 40000;
@@ -31,26 +28,25 @@ int main(){
     cout << "testing with size " << arrSize << endl;
 //    for( int r = 0; r < 5; r ++){
     for(int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
-        int* arr = array_choice(k, arrSize); // make array of choice k
-        vector <int> vecchio;
-        for(int i = 0; i < arrSize; i++){ // fill in vecchio with arr
-            vecchio.push_back(arr[i]);
-        }
+        // make array of choice k
+        // vector <int> vecchio;
+        // for(int i = 0; i < arrSize; i++){ // fill in vecchio with arr
+        //     vecchio.push_back(arr[i]);
+        // }
         for (int i = 0; i < 3; i++) {// three times (three trials)
-            start = clock();
-            // sort
 //            merge_sort(arr, 0, arrSize - 1); // working
 //            bubbleSort(arr, arrSize); // working
 //            selectionSort(arr, arrSize);
-            insertionSort(arr, arrSize); // working
 //            radixsort(arr, arrSize); // working
 //            countingSort(arr, arrSize); // working
 //            quickSort(arr, 0, arrSize-1, 0); // working
 //            Heap * heapTest = new Heap(vecchio, 1); //flag 1 indicates ascending order
 //            heapTest->ascendingHeapSort();
-//      heapsort broken with random array
-//      heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
-            end = clock();
+//            heapsort broken with random array
+//           heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
+            clock_t start = clock();
+            insertionSort(array_choice(k, arrSize), arrSize); // working
+            clock_t end = clock();
             double timeElapsed = (double) (end - start);
             double elapsedSeconds = timeElapsed / CLOCKS_PER_SEC;
             cout << "time for trial " << i+1 << ": " << elapsedSeconds << endl;
