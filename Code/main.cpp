@@ -40,12 +40,13 @@ int main(){
             start = clock();
             // sort
 //            merge_sort(arr, 0, arrSize - 1); // working
-//            bubbleSort(arr, arrSize); // working
-//            selectionSort(arr, arrSize);
-            insertionSort(arr, arrSize); // working
+            bubbleSort(arr, arrSize); // working
+//            selectionSort(arr, arrSize); // working
+//            insertionSort(arr, arrSize); // working
 //            radixsort(arr, arrSize); // working
 //            countingSort(arr, arrSize); // working
-//            quickSort(arr, 0, arrSize-1, 0); // working
+
+//            quickSort(arr, 0, arrSize-1, 0); // broken
 //            Heap * heapTest = new Heap(vecchio, 1); //flag 1 indicates ascending order
 //            heapTest->ascendingHeapSort();
 //      heapsort broken with random array
