@@ -28,7 +28,7 @@ int main(){
 	int abilli= 1'000'000'000; 
 
 	float average =0.00; 
-    const int arrSize =twoHundo;
+    const int arrSize =hund;
 	int* temp; 
 
     cout << "testing with size " << arrSize << endl;
@@ -57,9 +57,13 @@ int main(){
 //            heapsort broken with random array
 //           heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
             clock_t start = clock();
-            insertionSort(temp, arrSize); // working
+           // insertionSort(temp, arrSize); // working
             	//merge_sort(temp, 0, arrSize-1); // working
             //countingSort(temp, arrSize); // working
+            //radixsort(temp, arrSize); // SEGFAULT
+            //countingSort(temp, arrSize); // SEGFAULT
+           // selectionSort(temp, arrSize); //WORKING WITH 75K 
+           bubbleSort(temp, arrSize); // working
             clock_t end = clock();
 			temp = array_choice(k, arrSize); 
             double timeElapsed = (double) (end - start);
