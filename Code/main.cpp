@@ -60,8 +60,8 @@ int main(){
            // insertionSort(temp, arrSize); // working
             //merge_sort(temp, 0, arrSize-1); // working
             countingSort(temp, arrSize); // working
-            //radixsort(temp, arrSize); // SEGFAULT
-            //countingSort(temp, arrSize); // SEGFAULT
+            //radixsort(temp, arrSize); // working
+            //countingSort(temp, arrSize); // working
            // selectionSort(temp, arrSize); //WORKING WITH 75K 
            //bubbleSort(temp, arrSize); // working
             clock_t end = clock();
