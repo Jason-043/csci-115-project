@@ -28,7 +28,7 @@ int main(){
 	int abilli= 1000000000; 
 
 	float average =0.00; 
-    const int arrSize = tenmil;
+    const int arrSize = hunned;
 	int* temp; 
 
     cout << "testing with size " << arrSize << endl;
