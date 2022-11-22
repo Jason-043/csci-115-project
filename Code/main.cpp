@@ -1,6 +1,6 @@
 #include <iostream>
 #include "MergeSelect.h"
-#include "heap_better.h"
+//#include "heap_better.h"
 #include "bubble.h"
 #include "quickSorts.h"
 #include "arr_func.h"
@@ -23,12 +23,12 @@ int main(){
     int hund = 100000;
     int twoHundo = 200000;
     int mil = 1000000;
-	int tenmil= 10'000'000;
-	int hunned= 100'000'000;
-	int abilli= 1'000'000'000; 
+	int tenmil= 10000000;
+	int hunned= 100000000;
+	int abilli= 1000000000; 
 
 	float average =0.00; 
-    const int arrSize =hund;
+    const int arrSize = tenmil;
 	int* temp; 
 
     cout << "testing with size " << arrSize << endl;
@@ -58,12 +58,12 @@ int main(){
 //           heapsort broken with random array//      heapsort broken with random array//      heapsort broken with random array
             clock_t start = clock();
            // insertionSort(temp, arrSize); // working
-            	//merge_sort(temp, 0, arrSize-1); // working
-            //countingSort(temp, arrSize); // working
+            //merge_sort(temp, 0, arrSize-1); // working
+            countingSort(temp, arrSize); // working
             //radixsort(temp, arrSize); // SEGFAULT
             //countingSort(temp, arrSize); // SEGFAULT
            // selectionSort(temp, arrSize); //WORKING WITH 75K 
-           bubbleSort(temp, arrSize); // working
+           //bubbleSort(temp, arrSize); // working
             clock_t end = clock();
 			temp = array_choice(k, arrSize); 
             double timeElapsed = (double) (end - start);
@@ -71,7 +71,7 @@ int main(){
 			average += elapsedSeconds; 	
            // cout << "time " << i+1 << ": " << elapsedSeconds << endl;
            	if(i ==3)
-			cout << "---AVERAGE--- = " << float(average/3.00) << endl<<endl;
+			cout << "---AVERAGE--- = " << double(average/3.00) << endl<<endl;
         }
 		//cout<<"clocks_per_sec "<< CLOCKS_PER_SEC<<endl; 
     }
