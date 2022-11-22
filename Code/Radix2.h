@@ -4,26 +4,26 @@
 #include <chrono>
 using namespace std;
 
-void countingSort(int original[], int size){
+void countingSort(int* original, int size){
     int maxValue = original[0];
     for(int i= 0; i < size; ++i ){
         if (original[i] > maxValue){
             maxValue = original[i];
         }
     }
-    int freq[maxValue+1] ;
+    int* freq = new int [maxValue+1] ;
     for (int i = 0; i <= maxValue; ++i){
         freq[i] = 0;
     }
     for (int i = 0; i < size; ++i){
         freq[original[i]] += 1;
     }
-    int summ[maxValue+1];
+    int* summ = new int [maxValue+1];
     summ[0] = freq[0];
     for(int j = 1; j <= maxValue; ++j){
         summ[j] = summ[j-1] + freq[j];
     }
-    int output[size];
+    int* output = new int [size];
     for (int i = 0; i < size; ++i){
         output[i] = 0;
     }
@@ -38,14 +38,14 @@ void countingSort(int original[], int size){
     }
 
 }
-void countingSort2(int original[], int div, int size){
+void countingSort2(int* original, int div, int size){
     int maxValue = original[0];
     for(int i= 0; i < size; ++i ){
         if (original[i] > maxValue){
             maxValue = original[i];
         }
     }
-    int freq[10]={0};
+    int* freq = new int [10];
     for (int i = 0; i < 10; ++i){
         freq[i] = 0;
     }
@@ -55,7 +55,7 @@ void countingSort2(int original[], int div, int size){
     for(int j = 1; j < 10; ++j){
         freq[j] = freq[j-1] + freq[j];
     }
-    int output[size];
+    int* output = new int [size];
     for (int i = 0; i < size; ++i){
         output[i] = 0;
     }
