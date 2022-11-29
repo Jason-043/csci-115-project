@@ -10,7 +10,7 @@ void print_arr(int* arr,int size){
 
 int* array_choice(int choice, int size){
 
-	int * arr_choice= new int[size];/// CREATE ARRAY WE ARE TO RETURN 
+	int * arr_choice= new int[size];// CREATE ARRAY WE ARE TO RETURN
 	
  	if(choice==0){
 		cout<<"0 SORTED ARAY\n"; 
@@ -19,13 +19,13 @@ int* array_choice(int choice, int size){
 		}
 	}
 	else if(choice ==1){
-		cout<<"1 RANDOM ARAY\n"; 
+		cout<<"1 UNSORTED ARAY\n";
 		for(int i=0; i< size; i++){
 			arr_choice[i]= rand() %100; // RANDOM ARRAY
 		}
 	}	
 	else if(choice==2){
-		cout<<"2 PARTIALLY SORTED ARAY\n"; 
+		cout<<"2 HALF SORTED ARAY\n";
 		for(int i=0; i< size; i++){
 			if(i < (size/2))
 			arr_choice[i]= i;

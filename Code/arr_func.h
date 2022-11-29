@@ -1,6 +1,7 @@
-#include<iostream>
+#ifndef ARR_FU_H
+#define ARR_FU_H
 
-
+#include <iostream>
 using namespace std; 
 void print_arr(int* arr,int size){
 	for(int i=0; i<size; i++){
@@ -16,10 +17,10 @@ int* array_choice(int choice, int size, int i){
 		cout << tab <<"SORTED ARAY\n";
 	}
 	else if(choice ==1){
-		cout<< tab<<"RANDOM ARAY\n";
+		cout<< tab<<"UNSORTED ARAY\n";
 	}	
 	else if(choice==2){
-		cout<< tab<<"PARTIALLY SORTED ARAY\n";
+		cout<< tab<<"HALF SORTED ARAY\n";
 	}
 	else{
 		cout<< tab<<"REVERSE ARRAY\n";
@@ -97,3 +98,4 @@ for(int i=0; i<4;i++){
 //        revArr[j++] = i;
 //    }
 //  0 1 2 ..9
+#endif
