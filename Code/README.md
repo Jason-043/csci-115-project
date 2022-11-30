@@ -16,3 +16,8 @@ Jeronimo Valdez
 Saul Martinez
 Tomas Garcia
 Jason Yang
+
+this is for sort comparions\
+uncommentr the sort you wanna do\
+choose the suzes
+

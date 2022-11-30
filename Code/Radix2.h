@@ -36,9 +36,8 @@ void countingSort(int* original, int size){
     for (int i = 0; i < size; ++i){
         original[i] = output[i];
     }
-
 }
-void countingSort2(int* original, int div, int size){
+void countingSort(int* original, int div, int size){
     int maxValue = original[0];
     for(int i= 0; i < size; ++i ){
         if (original[i] > maxValue){
@@ -78,7 +77,7 @@ void radixsort(int *original2 , int size){
     }
 
     for(int div=1; maxValue/div > 0; div *= 10){
-        countingSort2(original2, div, size);
+        countingSort(original2, div, size);
     }
 
 }

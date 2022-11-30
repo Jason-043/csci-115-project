@@ -97,6 +97,59 @@ void quickSort(int unsorted[],int p, int r, int pivot_choice){
 		quickSort(unsorted, q+1, r, pivot_choice);
 			}
 }
+// jason's quicksort below
+
+int partition_j(int *arr, int low, int high , int flag){
+    int middleIndex = (high + low) / 2;
+    int medianIndex = 0;
+    if(arr[middleIndex] < arr[low] && arr[low] < arr[high]){ // find median index
+        medianIndex = low;
+    }
+    else if(arr[low] < arr[high] && arr[high] < arr[middleIndex]){
+        medianIndex = high;
+    }
+    else{
+        medianIndex = middleIndex;
+    }
+
+    int random = (rand() % (high - low)) + low; //for random pivot
+
+    int x = arr[low]; // pivot selection
+    if(flag == 0) // first element
+        x = arr[low];
+    else if(flag == 1) { // random element
+        swap(arr[random], arr[low]);
+    }
+    else{// median value
+        swap(arr[medianIndex], arr[low]);
+    }
+    x = arr[low]; // actual pivot selection
+    int i = low - 1;
+    int j = high + 1;
+    while (true){
+        do{
+            j--;
+        } while(arr[j] > x);
+        do{
+            i++;
+        } while(arr[i] < x);
+        if(i < j){
+            swap(arr[i], arr[j]);
+        }
+        else return j;
+    }
+}
+
+void QuickSort(int *arr, int p, int r, int f){ // 0 = first, 1 = random, else median
+    int q = 0;
+    static int flag = f;
+    if(p < r){
+        q = partition_j(arr, p, r, flag);
+        QuickSort(arr, p, q, flag);
+        QuickSort(arr, q + 1, r, flag);
+    }
+}
+
 
 //
 //int main(){
