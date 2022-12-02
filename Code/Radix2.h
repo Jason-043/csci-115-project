@@ -11,7 +11,7 @@ void countingSort(int* original, int size){
             maxValue = original[i];
         }
     }
-    int* freq = new int [maxValue+1] ;
+    int* freq = new int [maxValue+1];
     for (int i = 0; i <= maxValue; ++i){
         freq[i] = 0;
     }
@@ -67,7 +67,7 @@ void countingSort(int* original, int div, int size){
         original[i] = output[i];
     }
 }
-void radixsort(int *original2 , int size){
+void radixSort(int *original2 , int size){
     size = size;
     int maxValue = original2[0];
     for(int i= 0; i < size; ++i ){

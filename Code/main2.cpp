@@ -83,13 +83,16 @@ void twoSumSortPoint(int* arr, int arrSize, int goal){
 }
 
 int main(){
-//    const int arrSize = 10;
-//
-
     int userInput = 0;
     cout << "enter the size of your array: ";
     cin >> userInput;
+    int arrSize = userInput;
     int arr[userInput];
+    for(int i = 0; i < arrSize; i++){
+        cout << "\nenter number for " << i << " index: ";
+        cin >> userInput;
+        arr[i] = userInput;
+    }
 
 
     cout << "enter 1 for brute force method:" << endl;

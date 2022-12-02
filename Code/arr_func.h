@@ -7,54 +7,36 @@ void print_arr(int* arr,int size){
 	for(int i=0; i<size; i++){
 		cout<<arr[i]<<endl;
 	}	
-}	
+}
 
-int* array_choice(int choice, int size, int i){
+int* array_choice(int choice, int size, int range = 100){
     char tab = 9;
-	int * arr_choice= new int[size]; // MAKE ARRAY 
-	if (i==0){
-		if(choice==0){
-		cout << tab <<"SORTED ARAY\n";
-	}
-	else if(choice ==1){
-		cout<< tab<<"UNSORTED ARAY\n";
-	}	
-	else if(choice==2){
-		cout<< tab<<"HALF SORTED ARAY\n";
-	}
-	else{
-		cout<< tab<<"REVERSE ARRAY\n";
-	}
+	int* arr_choice= new int[size]; // MAKE ARRAY
 
-	}
 	if(choice==0){
-		//cout<<"0 SORTED ARAY\n"; 
 		for(int i=0; i< size; i++){
-		arr_choice[i]= i; // SORTED 
+		arr_choice[i]= (i%range); // SORTED
 		}
 	}
 	else if(choice ==1){
-		//cout<<"1 RANDOM ARAY\n"; 
 		for(int i=0; i< size; i++){
-			arr_choice[i]= rand() %100; // RANDOM ARRAY
+			arr_choice[i]= rand() % range; // RANDOM ARRAY
 		}
-	}	
-	else if(choice==2){
-		//cout<<"2 PARTIALLY SORTED ARAY\n"; 
+	}
+	else if(choice==2){ // half sorted
 		for(int i=0; i< size; i++){
 			if(i < (size/2))
-			arr_choice[i]= i;
+			arr_choice[i]= (i%range);
 			else
-			arr_choice[i]= rand()% 100;
+			arr_choice[i]= rand()% range;
 		}
 	}
 	else{
-		int j =0; 
-		//cout<<"REVERSE ARRAY\n";
+		int j =0;
 		for(int i= size-1; i>=0; i--){
-			arr_choice[j]= i;
+			arr_choice[j]= (i%range);
 				j++;
-		}	
+		}
 	}
 return arr_choice; // RETURN THE PROPER ARRAY
 }

@@ -7,19 +7,6 @@
 
 using namespace std;
 
-void selectionSort(int* arr, int size) {
-    for (int i = 0; i < size-1; i++) {
-        int min = i;
-        for (int j = i + 1; j < size; j++) {
-            if (arr[j] < arr[min]) {
-                min = j;
-            }
-        }
-        if (min != i) {
-            swap(arr[i], arr[min]);
-        }
-    }
-}
 void merge(int arr[], int l, int mid, int end) {
     //cout << "in merge\n";
     int size_1 = mid - l + 1;
@@ -66,13 +53,13 @@ void merge(int arr[], int l, int mid, int end) {
     delete[] right_arr;
 }
 
-void merge_sort(int unmerged[], int l, int h) {
+void mergeSort(int unmerged[], int l, int h) {
     //cout << " l is: " << l << " and h is: " << h << endl;
     if (l >= h) return;
     int mid = (l+ h) / 2;
 
-    merge_sort(unmerged,l, mid);
-    merge_sort(unmerged,mid+1, h);
+    mergeSort(unmerged, l, mid);
+    mergeSort(unmerged, mid + 1, h);
     merge(unmerged,l,mid,h);
 }
 
