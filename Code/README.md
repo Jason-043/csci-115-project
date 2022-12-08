@@ -12,9 +12,9 @@
 
 > **_The Team_**
 
-Jeronimo Valdez
-Saul Martinez
-Tomas Garcia
+Jeronimo Valdez\
+Saul Martinez\
+Tomas Garcia\
 Jason Yang
 
 this is for sort comparions\

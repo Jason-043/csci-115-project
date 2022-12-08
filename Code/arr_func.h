@@ -9,13 +9,16 @@ void print_arr(int* arr,int size){
 	}	
 }
 
-int* array_choice(int choice, int size, int range = 100){
+int* array_choice(int choice, int size, int range = 0){
     char tab = 9;
+    if(range == 0) {// if range was not passed in
+        range = size;
+    }
 	int* arr_choice= new int[size]; // MAKE ARRAY
 
 	if(choice==0){
 		for(int i=0; i< size; i++){
-		arr_choice[i]= (i%range); // SORTED
+		arr_choice[i]= i%range; // SORTED
 		}
 	}
 	else if(choice ==1){
@@ -26,7 +29,7 @@ int* array_choice(int choice, int size, int range = 100){
 	else if(choice==2){ // half sorted
 		for(int i=0; i< size; i++){
 			if(i < (size/2))
-			arr_choice[i]= (i%range);
+			arr_choice[i]= i%range;
 			else
 			arr_choice[i]= rand()% range;
 		}
@@ -34,7 +37,7 @@ int* array_choice(int choice, int size, int range = 100){
 	else{
 		int j =0;
 		for(int i= size-1; i>=0; i--){
-			arr_choice[j]= (i%range);
+			arr_choice[j]= i%range;
 				j++;
 		}
 	}

@@ -64,7 +64,7 @@ void twoSumSortPoint(int* arr, int arrSize, int goal){
     low = 0;
     high = arrSize-1;
     int sum = 0;
-    while(!found){
+    while((!found) && (low != high)){
         sum = arr[low] + arr[high];
         if(sum == goal){
             found = true;
