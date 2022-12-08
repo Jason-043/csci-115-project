@@ -2,13 +2,17 @@
 
 > **_How to use the Program_**
 
-- A) Uncomment the desired algorthim for testing within the Clock.start() and Clock.end()
+**Steps**
+- A) First input a number 1 to 8 to test the corresponding sort.
+    -    (If QuickSort is chosen, then enter either 0 or 1 for Pivot Point)
 
-- B)
+- B) Then enter the size of desired array.
 
-- C)
+- C) The Program than will output three trials for each type of array. (Sorted, Partially, Random, Reverse)
 
-- D)
+ 
+
+
 
 > **_The Team_**
 
@@ -17,7 +21,5 @@ Saul Martinez
 Tomas Garcia
 Jason Yang
 
-this is for sort comparions\
-uncommentr the sort you wanna do\
-choose the suzes
+
 
