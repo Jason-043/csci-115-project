@@ -10,35 +10,65 @@ void print(int *arr, int size){
 }
 
 int main(){
-    char tab = 9;
-    double average = 0;
-    int size = 0;
-    int counter = 0;
+    int userInput = 0;
+    int size;
+    cout << "please enter the number of the sort which you would like to test\n";
+    cout << "1. Insertion Sort\n2. Selection Sort\n3.Bubble Sort\n4.QuickSort\n5.Merge Sort\n6.Heap Sort\n7.Counting Sort\n8.RadixSort\n";
+    cin >> userInput;
+    cout << "Enter the size of your array" << endl;
+    cin >> size;
+    if(userInput > 0 && userInput < 9) {
+        for (int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
+            cout << endl;
+            if (k == 0) {
+                cout << "SORTED ARRAY" << endl;
+            } else if (k == 1) {
+                cout << "RANDOMIZED ARRAY" << endl;
+            } else if (k == 2) {
+                cout << "HALF SORTED ARRAY" << endl;
+            } else {
+                cout << "REVERSE SORTED ARRAY" << endl;
+            }
 
-for (int k = 0; k < 4; k++) { // k represents the type of array 0-sorted, 1-random, 2-half, other-reverse
-    cout << endl;
-    if (k == 0) {
-        cout << "SORTED ARRAY" << endl;
+
+
+            if (userInput == 1) {
+                testInsertionSort(k, size);
+            }
+            else if (userInput == 2) {
+                    testSelectionSort(k, size);
+            }
+            else if (userInput == 3) {
+                    testBubbleSort(k, size);
+            }
+            else if (userInput == 4) {// quickSort
+                cout << "enter 1 if you would like the partition to be the median, enter 0 if you would like it to be the first element\n";
+                cin >> userInput;
+                if (userInput == 1){
+                        testQuickSortMed(k, size); // partition = middle element
+                }
+                else if(userInput == 0){
+                        testQuickSortFirst(k, size); // partition = first element
+                }
+                else{cout << "invalid";}
+            }
+            else if (userInput == 5) {
+                    testMergeSort(k, size);
+            }
+            else if (userInput == 6) {
+                    testHeapSort(k, size);
+            }
+            else if (userInput == 7) {
+                testCountingSort(k, size);
+            }
+            else if (userInput == 8) {
+                testRadixSort(k, size);
+            }
+        }
     }
-    else if (k == 1) {
-        cout << "RANDOMIZED ARRAY" << endl;
+    else{
+        cout << "invalid input" << endl;
     }
-    else if (k == 2) {
-        cout << "HALF SORTED ARRAY" << endl;
-    }
-    else {
-        cout << "REVERSE SORTED ARRAY" << endl;
-    }
-//    testInsertionSort(k, 20000);
-//    testSelectionSort(k, 20000);
-//    testBubbleSort(k, 20000);
-//    testQuickSortFirst(k, 17000); // partition = first element
-//    testQuickSortMed(k, 5000000); // partition = middle element
-//    testMergeSort(k, 5000000);
-//    testHeapSort(k, 5000000);
-//    testCountingSort(k, 10000000);
-    testRadixSort(k, 10000000);
-}
 
 
 
