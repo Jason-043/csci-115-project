@@ -10,6 +10,7 @@
 
 - C) The Program than will output three trials for each type of array. (Sorted, Partially, Random, Reverse)
 
+- D) (optional) If you would like to check if the sorts are working correctly, there is code at the bottom that allows you to uncomment one of the sorts, you can also uncomment the prints before and after the sort to see the before and after array
  
 
 
